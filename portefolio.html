@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portefólio | Máximo’s Tattoo Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 150px 5% 50px;
+            text-align: center;
+            background: linear-gradient(rgba(8,8,8,0.9), var(--bg-dark)), url('https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/9a547010-f53d-4ca5-b993-09f7b8336774_rw_1920.jpeg?h=5fd9b30e4d68c7754c64703e385a5b99') center/cover;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            font-family: var(--font-sans);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            color: #fff;
+            border-color: var(--accent-copper);
+            background: rgba(199, 121, 75, 0.1);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            aspect-ratio: 4/5;
+            cursor: zoom-in;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--transition-smooth);
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity var(--transition-smooth);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .portfolio-info p {
+            font-size: 0.9rem;
+            color: var(--accent-copper);
+            margin: 0;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(8,8,8,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 4px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: color var(--transition-smooth);
+        }
+
+        .modal-close:hover {
+            color: var(--accent-copper);
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-content">
+            <img src="imgs/logo.png" alt="Máximo's Tattoo Shop" class="loader-logo">
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo"><img src="imgs/logo.png" alt="Máximo's Tattoo Shop"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="estudio.html">O Estúdio</a></li>
+                <li><a href="portefolio.html" class="active">Portefólio</a></li>
+                <li><a href="convencoes.html">Convenções</a></li>
+                <li><a href="cuidados.html">Cuidados</a></li>
+                <li><a href="contacto.html" class="btn-primary" style="color:white!important;">Agendar Tatuagem</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    </header>
+
+    <main>
+        <section class="page-header fade-up">
+            <div class="container">
+                <h1>Portefólio</h1>
+                <p>Explora os trabalhos recentes e encontra inspiração.</p>
+            </div>
+        </section>
+
+        <section class="container fade-up" style="padding-top: 0;">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="black-grey">Black & Grey</button>
+                <button class="filter-btn" data-filter="realismo">Realismo</button>
+                <button class="filter-btn" data-filter="grandes">Projetos Grandes</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="black-grey" onclick="openModal(this)">
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/9a547010-f53d-4ca5-b993-09f7b8336774_rw_1920.jpeg?h=5fd9b30e4d68c7754c64703e385a5b99" alt="Águia Peito">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h3>Águia</h3>
+                            <p>Black & Grey</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="grandes" onclick="openModal(this)">
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/7c2eefe3-48d6-47b9-ad19-a01fca27b56e_rw_1920.jpeg?h=8f2eebcc6a8084aa6534615d7fa0cb57" alt="Gladiador Costas">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h3>Gladiador</h3>
+                            <p>Projetos Grandes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="realismo" onclick="openModal(this)">
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/bf830eb0-b700-444a-b5b3-7c4dd4fde6f7_rw_1920.jpeg?h=f48b32bd23892fbfdb6a85a183415d82" alt="Retrato Realismo">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h3>Retrato</h3>
+                            <p>Realismo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="realismo" onclick="openModal(this)">
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/9c81385b-529d-4561-a544-b95ece6602f2_rw_1920.jpeg?h=be82f51b2fcb13432daf1600adb9d6e3" alt="Caveira Manga">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h3>Caveira e Relógio</h3>
+                            <p>Realismo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="black-grey" onclick="openModal(this)">
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/6fdc51e4-0fb7-476e-806f-41abd677d039_rw_1920.jpeg?h=0f83e27159abf3a946e6b3b2a493914b" alt="Estátuas Manga">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-info">
+                            <h3>Estátuas Clássicas</h3>
+                            <p>Black & Grey</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta fade-up">
+            <div class="container" style="text-align: center;">
+                <h2>Encontraste o teu estilo?</h2>
+                <a href="contacto.html" class="btn-primary" style="margin-top: 20px;">Pedir Orçamento</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="imageModal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <img src="" alt="Ampliado" class="modal-content" id="modalImg">
+    </div>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><img src="imgs/logo.png" alt="Máximo's Tattoo Shop"></a>
+                <p>Estúdio de tatuagens em Lousada focado em arte personalizada, Realismo Black & Grey e Trash Polka.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="estudio.html">O Estúdio</a></li>
+                    <li><a href="portefolio.html">Portefólio</a></li>
+                    <li><a href="convencoes.html">Convenções</a></li>
+                    <li><a href="cuidados.html">Cuidados</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contactos</h4>
+                <ul>
+                    <li><a href="contacto.html">R. Dr. Mário Soares 271, Lousada</a></li>
+                    <li><a href="https://wa.me/351962953437" target="_blank">+351 962 953 437</a></li>
+                    <li><a href="https://www.instagram.com/maximos.tattooshop_lousada/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/maximus.tattoo/?locale=pt_PT" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Máximo’s Tattoo Shop. Arte na pele, criada com intenção.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.8;">Feito por <a href="https://byleandr0.com" target="_blank" style="color: var(--accent-copper);">byleandr0</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Filters Demo Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const items = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                items.forEach(item => {
+                    if(filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+
+        function openModal(item) {
+            const imgSrc = item.querySelector('img').src;
+            modalImg.src = imgSrc;
+            modal.classList.add('show');
+        }
+
+        function closeModal() {
+            modal.classList.remove('show');
+            setTimeout(() => modalImg.src = '', 300); // clear after fade
+        }
+
+        // Close on click outside
+        modal.addEventListener('click', (e) => {
+            if(e.target === modal) closeModal();
+        });
+    </script>
+</body>
+</html>
+
+

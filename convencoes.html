@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convenções | Máximo’s Tattoo Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 150px 5% 50px;
+            text-align: center;
+            background: linear-gradient(rgba(8,8,8,0.9), var(--bg-dark)), url('https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/9c81385b-529d-4561-a544-b95ece6602f2_rw_1920.jpeg?h=be82f51b2fcb13432daf1600adb9d6e3') center/cover;
+        }
+
+        .convencoes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .convention-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .convention-section.reverse {
+            direction: rtl;
+        }
+
+        .convention-section.reverse > * {
+            direction: ltr;
+        }
+
+        @media (max-width: 800px) {
+            .convention-section { grid-template-columns: 1fr; }
+            .convention-section.reverse { direction: ltr; }
+        }
+
+        .convention-img {
+            width: 100%;
+            border-radius: 4px;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        .convention-year {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            color: rgba(255,255,255,0.05);
+            margin-bottom: -30px;
+            z-index: -1;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Premium Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-content">
+            <img src="imgs/logo.png" alt="Máximo's Tattoo Shop" class="loader-logo">
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo"><img src="imgs/logo.png" alt="Máximo's Tattoo Shop"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="estudio.html">O Estúdio</a></li>
+                <li><a href="portefolio.html">Portefólio</a></li>
+                <li><a href="convencoes.html" class="active">Convenções</a></li>
+                <li><a href="cuidados.html">Cuidados</a></li>
+                <li><a href="contacto.html" class="btn-primary" style="color:white!important;">Agendar Tatuagem</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    </header>
+
+    <main>
+        <section class="page-header fade-up">
+            <div class="container">
+                <h1>Convenções</h1>
+                <p>A presença em eventos nacionais reforça a evolução artística e o contacto com o mundo da tatuagem.</p>
+            </div>
+        </section>
+
+        <section class="container fade-up">
+            <div class="convention-section">
+                <div>
+                    <div class="convention-year">2024</div>
+                    <h2>Oporto Tattoo 2024</h2>
+                    <p>A participação na Oporto Tattoo 2024 foi marcada pela apresentação de trabalhos detalhados em Black & Grey. O foco esteve na fusão entre elementos realistas e geometria abstrata, resultando em peças que captaram a atenção do público e colegas de profissão.</p>
+                    <a href="convencao-2024.html" class="btn-secondary">Ver trabalhos e fotos</a>
+                </div>
+                <div>
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/4511823c-ef8d-478a-86bc-3c1ce952b49f_rw_1920.jpg?h=d4fc7ac94c34b9d5d0ba6f170cade11d" alt="Oporto Tattoo 2024" class="convention-img">
+                </div>
+            </div>
+
+            <div class="convention-section reverse">
+                <div>
+                    <div class="convention-year">2023</div>
+                    <h2>Oporto Tattoo 2023</h2>
+                    <p>A primeira grande participação, onde explorámos os limites do Trash Polka, combinando a agressividade da mancha vermelha com a precisão dos elementos gráficos a negro. Uma experiência fundamental para o crescimento do estúdio.</p>
+                    <a href="convencao-2023.html" class="btn-secondary">Ver fotos e trabalhos</a>
+                </div>
+                <div>
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/884b999f-965d-466d-9c5b-67db2e31e0cb_rw_1920.jpg?h=8cf43bf4e1bcdba3b547146db1200831" alt="Oporto Tattoo 2023" class="convention-img">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><img src="imgs/logo.png" alt="Máximo's Tattoo Shop"></a>
+                <p>Estúdio de tatuagens em Lousada focado em arte personalizada, Realismo Black & Grey e Trash Polka.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="estudio.html">O Estúdio</a></li>
+                    <li><a href="portefolio.html">Portefólio</a></li>
+                    <li><a href="convencoes.html">Convenções</a></li>
+                    <li><a href="cuidados.html">Cuidados</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contactos</h4>
+                <ul>
+                    <li><a href="contacto.html">R. Dr. Mário Soares 271, Lousada</a></li>
+                    <li><a href="https://wa.me/351962953437" target="_blank">+351 962 953 437</a></li>
+                    <li><a href="https://www.instagram.com/maximos.tattooshop_lousada/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/maximus.tattoo/?locale=pt_PT" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Máximo’s Tattoo Shop. Arte na pele, criada com intenção.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.8;">Feito por <a href="https://byleandr0.com" target="_blank" style="color: var(--accent-copper);">byleandr0</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

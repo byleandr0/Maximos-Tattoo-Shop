@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Estúdio | Máximo’s Tattoo Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 150px 5% 50px;
+            text-align: center;
+            background: linear-gradient(rgba(8,8,8,0.9), var(--bg-dark)), url('https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/9c81385b-529d-4561-a544-b95ece6602f2_rw_1920.jpeg?h=be82f51b2fcb13432daf1600adb9d6e3') center/cover;
+        }
+
+        .studio-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 800px) {
+            .studio-content { grid-template-columns: 1fr; }
+        }
+
+        .studio-content img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .philosophy-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 4px;
+            border-top: 2px solid var(--accent-copper);
+        }
+
+        .philosophy-card h3 {
+            color: var(--accent-copper);
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-content">
+            <img src="imgs/logo.png" alt="Máximo's Tattoo Shop" class="loader-logo">
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo"><img src="imgs/logo.png" alt="Máximo's Tattoo Shop"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="estudio.html" class="active">O Estúdio</a></li>
+                <li><a href="portefolio.html">Portefólio</a></li>
+                <li><a href="convencoes.html">Convenções</a></li>
+                <li><a href="cuidados.html">Cuidados</a></li>
+                <li><a href="contacto.html" class="btn-primary" style="color:white!important;">Agendar Tatuagem</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    </header>
+
+    <main>
+        <section class="page-header fade-up">
+            <div class="container">
+                <h1>O Estúdio</h1>
+                <p>Onde a tua ideia ganha forma, num ambiente profissional e dedicado.</p>
+            </div>
+        </section>
+
+        <section class="container fade-up">
+            <div class="studio-content">
+                <div>
+                    <h2>A Nossa História</h2>
+                    <p>Localizada em Lousada, a Máximo’s Tattoo Shop nasceu da paixão do Bruno pela arte corporal. Com foco numa abordagem altamente personalizada, o estúdio foi desenhado para oferecer uma experiência confortável, higiénica e inspiradora.</p>
+                    <p>O nosso foco é garantir que cada cliente sai com uma obra de arte na pele da qual se orgulhe, feita com os melhores materiais e sob as normas mais estritas de segurança.</p>
+                </div>
+                <div>
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/81370395-f164-4ade-aef3-88317e2e0050_rw_1920.jpg?h=af7d8f66db777d143a707788eb44a672" alt="Interior do Estúdio">
+                </div>
+            </div>
+
+            <div class="studio-content" style="margin-top: 100px;">
+                <div>
+                    <img src="https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/fa7a2385-e1d7-4b5f-ae5c-f76f221e9e5f_rw_1920.jpg?h=5031e54060f0aadb15c7d73b4113dce2" alt="Bruno a trabalhar">
+                </div>
+                <div>
+                    <h2>Bruno</h2>
+                    <h3 style="color: var(--text-muted); margin-bottom: 20px;">Tatuador & Fundador</h3>
+                    <p>Olá. Eu sou o Bruno, tenho 32 anos e sou natural de Lousada.</p>
+                    <p>Sou um apaixonado por arte desde a tenra idade, tendo passado por diversos trabalhos e atividades relacionadas com a arte, tendo também terminado o ensino secundário em Belas Artes.</p>
+                    <p>O meu intuito na tatuagem é criar projetos únicos para cada pessoa, refletindo assim a sua personalidade, a sua dor, sentimento, memória ou até mesmo simplesmente o seu gosto pessoal por determinado tema.</p>
+                    <p>Considero me um artista versátil, com aptidão para os mais diversos estilos, mas com foco e especialidade no Realismo Black & Grey e Trash Polka sendo o meu predileto.</p>
+                    <p style="margin-top: 30px; font-weight: 500;">E tu, de que estás à espera para entrar em contacto e agendar o teu projeto comigo?</p>
+                    <div style="display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap;">
+                        <a href="contacto.html" class="btn-primary">Clica aqui, até já!</a>
+                        <a href="portefolio.html" class="btn-secondary">Ver Portefólio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container fade-up" style="padding-top: 0;">
+            <h2 style="text-align: center; display: block; margin-bottom: 20px;">A Nossa Filosofia</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>Arte Personalizada</h3>
+                    <p>Não há duas tatuagens iguais. Trabalhamos a partir das tuas referências para criar um design exclusivo que se adapte perfeitamente à anatomia do teu corpo.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Higiene e Segurança</h3>
+                    <p>Seguimos rigorosamente todas as normas da DGS. Usamos materiais descartáveis e esterilizados, garantindo 100% de segurança em todos os procedimentos.</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Evolução Contínua</h3>
+                    <p>A presença constante em convenções e workshops nacionais e internacionais garante que estamos sempre atualizados com as melhores técnicas e materiais do mercado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta fade-up">
+            <div class="container" style="text-align: center;">
+                <h2>Pronto para começarmos?</h2>
+                <a href="contacto.html" class="btn-primary" style="margin-top: 20px;">Falar com o estúdio</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><img src="imgs/logo.png" alt="Máximo's Tattoo Shop"></a>
+                <p>Estúdio de tatuagens em Lousada focado em arte personalizada, Realismo Black & Grey e Trash Polka.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="estudio.html">O Estúdio</a></li>
+                    <li><a href="portefolio.html">Portefólio</a></li>
+                    <li><a href="convencoes.html">Convenções</a></li>
+                    <li><a href="cuidados.html">Cuidados</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contactos</h4>
+                <ul>
+                    <li><a href="contacto.html">R. Dr. Mário Soares 271, Lousada</a></li>
+                    <li><a href="https://wa.me/351962953437" target="_blank">+351 962 953 437</a></li>
+                    <li><a href="https://www.instagram.com/maximos.tattooshop_lousada/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/maximus.tattoo/?locale=pt_PT" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Máximo’s Tattoo Shop. Arte na pele, criada com intenção.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.8;">Feito por <a href="https://byleandr0.com" target="_blank" style="color: var(--accent-copper);">byleandr0</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

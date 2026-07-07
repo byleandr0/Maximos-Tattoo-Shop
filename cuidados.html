@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidados | Máximo’s Tattoo Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .page-header {
+            padding: 150px 5% 50px;
+            text-align: center;
+            background: linear-gradient(rgba(8,8,8,0.9), var(--bg-dark)), url('https://cdn.myportfolio.com/5f1f122c-08f6-4db4-a8df-3c2144be838a/bf830eb0-b700-444a-b5b3-7c4dd4fde6f7_rw_1920.jpeg?h=f48b32bd23892fbfdb6a85a183415d82') center/cover;
+        }
+
+        .care-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .care-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-copper);
+        }
+
+        .care-card h3 {
+            color: var(--accent-copper);
+            margin-bottom: 15px;
+            font-family: var(--font-sans);
+            font-weight: 500;
+        }
+
+        .care-card ul {
+            list-style: none;
+        }
+        
+        .care-card ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+        }
+
+        .care-card ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-copper);
+        }
+
+        .alert-box {
+            background: rgba(199, 121, 75, 0.1);
+            border: 1px solid rgba(199, 121, 75, 0.3);
+            padding: 20px;
+            border-radius: 4px;
+            margin-top: 60px;
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .alert-box p {
+            margin: 0;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Premium Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-content">
+            <img src="imgs/logo.png" alt="Máximo's Tattoo Shop" class="loader-logo">
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <a href="index.html" class="logo"><img src="imgs/logo.png" alt="Máximo's Tattoo Shop"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="estudio.html">O Estúdio</a></li>
+                <li><a href="portefolio.html">Portefólio</a></li>
+                <li><a href="convencoes.html">Convenções</a></li>
+                <li><a href="cuidados.html" class="active">Cuidados</a></li>
+                <li><a href="contacto.html" class="btn-primary" style="color:white!important;">Agendar Tatuagem</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+    </header>
+
+    <main>
+        <section class="page-header fade-up">
+            <div class="container">
+                <h1>Cuidados Pós-Tatuagem</h1>
+                <p>A cicatrização é 50% do resultado final. Segue estas instruções para garantir que a tua arte fica perfeita.</p>
+            </div>
+        </section>
+
+        <section class="container fade-up" style="padding-top: 0;">
+            <div class="care-grid">
+                <div class="care-card">
+                    <h3>Limpeza & Cicatrização</h3>
+                    <ul>
+                        <li>Remove a película após 2 a 4 horas e lava a área suavemente com água e sabão neutro.</li>
+                        <li>Aplica uma pomada cicatrizante indicada pelo teu tatuador, duas vezes ao dia, durante uma semana.</li>
+                    </ul>
+                </div>
+
+                <div class="care-card">
+                    <h3>O Que Evitar (15 dias)</h3>
+                    <ul>
+                        <li>Evita a exposição ao sol, piscina, mar, sauna e banhos muito quentes ou demorados por pelo menos 15 dias.</li>
+                        <li>Usa roupas leves e confortáveis, que não apertem ou irritem a pele tatuada.</li>
+                    </ul>
+                </div>
+
+                <div class="care-card">
+                    <h3>Proteção & Manutenção</h3>
+                    <ul>
+                        <li><strong>Não</strong> coces, esfregues ou arranques as crostas/peles que se formam sobre a tatuagem.</li>
+                        <li>Após a cicatrização completa, hidrata a pele com um creme sem álcool ou perfume para manter as cores vivas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="alert-box fade-up">
+                <p><strong>Aviso Importante:</strong> Estas indicações são gerais. Segue sempre as recomendações específicas dadas pelo teu tatuador no final da sessão. Em caso de dúvida sobre a cicatrização, contacta-nos.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="logo"><img src="imgs/logo.png" alt="Máximo's Tattoo Shop"></a>
+                <p>Estúdio de tatuagens em Lousada focado em arte personalizada, Realismo Black & Grey e Trash Polka.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="estudio.html">O Estúdio</a></li>
+                    <li><a href="portefolio.html">Portefólio</a></li>
+                    <li><a href="convencoes.html">Convenções</a></li>
+                    <li><a href="cuidados.html">Cuidados</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contactos</h4>
+                <ul>
+                    <li><a href="contacto.html">R. Dr. Mário Soares 271, Lousada</a></li>
+                    <li><a href="https://wa.me/351962953437" target="_blank">+351 962 953 437</a></li>
+                    <li><a href="https://www.instagram.com/maximos.tattooshop_lousada/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/maximus.tattoo/?locale=pt_PT" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Máximo’s Tattoo Shop. Arte na pele, criada com intenção.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.8;">Feito por <a href="https://byleandr0.com" target="_blank" style="color: var(--accent-copper);">byleandr0</a></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
